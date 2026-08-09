@@ -1,0 +1,35 @@
+{
+  "name": "echo-sentiment",
+  "description": "Pay-per-call sentiment analysis MCP server with x402 micropayments (dual-chain Base + Solana). Returns sentiment scores for text; every tool call demands 0.005 USDC via x402 payment protocol.",
+  "version": "1.0.0",
+  "protocol": "mcp",
+  "endpoints": {
+    "mcp": "https://abstain-eliminate-unison.ngrok-free.dev"
+  },
+  "capabilities": [
+    "sentiment-analysis",
+    "mcp",
+    "x402-payments"
+  ],
+  "use_cases": [
+    "Sentiment scoring for social media text",
+    "Batch sentiment analysis via API",
+    "Pay-per-call LLM-adjacent tooling"
+  ],
+  "category": "nlp",
+  "auth_type": "x402",
+  "payment": {
+    "protocol": "x402",
+    "price_usd": 0.005,
+    "networks": ["eip155:8453", "solana"],
+    "pay_to_base": "0x583FfEE3f6E0E8cAB3531fBd5C4e291784D3b6cD",
+    "pay_to_solana": "7bu8aB2w94N8TRysqbBdKXNoPqSr9UopaZXJGVSRbLgk",
+    "well_known": "/.well-known/x402"
+  },
+  "discovery": {
+    "robots_txt": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "llms_txt": "/llms.txt",
+    "openapi": "/openapi.json"
+  }
+}
