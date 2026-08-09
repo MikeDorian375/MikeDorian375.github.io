@@ -1,0 +1,18 @@
+# MikeDorian375.github.io
+
+Agent-ready landing site for the Echo Sentiment API — a pay-per-call sentiment analysis API and MCP server built on the x402 payment standard (dual-chain: Base + Solana, USDC, no API keys).
+
+## For AI agents
+
+- /llms.txt — service summary + endpoint list
+- /openapi.json — machine-readable spec (live)
+- /.well-known/x402 — payment discovery (live)
+- /robots.txt — content signals (search=yes, ai-input=yes, ai-train=no)
+- /sitemap.xml
+
+## Links
+
+- Live API: https://abstain-eliminate-unison.ngrok-free.dev/
+- MCP server repo: https://github.com/MikeDorian375/echo-sentiment-mcp
+- Seller starter kit: https://github.com/MikeDorian375/x402-paywall-starter
+- x402 standard: https://x402.org

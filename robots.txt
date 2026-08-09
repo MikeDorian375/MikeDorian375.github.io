@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Content signals (https://llmstxt.org/robots.txt convention)
+# search   = building a search index / search results
+# ai-input = inputting content into AI models (RAG, grounding, generative answers)
+# ai-train = training or fine-tuning AI models
+#
+# MikeDorian375.github.io — landing page for the Echo Sentiment API + MCP server
+# (pay-per-call via x402). Pages content may be used for search and AI input.
+# Training/fine-tuning is not granted.
+Content-Signal: search=yes
+Content-Signal: ai-input=yes
+Content-Signal: ai-train=no
+
+Sitemap: https://mikedorian375.github.io/sitemap.xml
