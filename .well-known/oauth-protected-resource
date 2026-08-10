@@ -1,7 +1,20 @@
 {
+  "resource": "https://6766587364.lol",
+  "authorization_servers": ["https://6766587364.lol"],
+  "scopes_supported": ["sentiment:analyze", "sentiment:batch"],
+  "bearer_methods_supported": ["header"],
+  "x402": {
+    "protocol": "x402",
+    "description": "This resource does not use OAuth 2.0 bearer tokens. Access is granted via the x402 payment protocol: HTTP 402 challenge-response micropayments, 0.005 USDC per call on Base or Solana. See /.well-known/x402.",
+    "well_known": "https://6766587364.lol/.well-known/x402",
+    "price_usd": 0.005,
+    "networks": ["eip155:8453", "solana"],
+    "pay_to_base": "0x583FfEE3f6E0E8cAB3531fBd5C4e291784D3b6cD",
+    "pay_to_solana": "7bu8aB2w94N8TRysqbBdKXNoPqSr9UopaZXJGVSRbLgk"
+  },
   "protected_resources": [
     {
-      "resource": "/v1/sentiment",
+      "resource": "https://6766587364.lol/v1/sentiment",
       "methods": ["POST"],
       "authentication_methods": [
         {
@@ -14,7 +27,7 @@
       ]
     },
     {
-      "resource": "/v1/sentiment-report",
+      "resource": "https://6766587364.lol/v1/sentiment-report",
       "methods": ["POST"],
       "authentication_methods": [
         {

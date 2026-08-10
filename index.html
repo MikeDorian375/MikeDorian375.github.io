@@ -11,6 +11,61 @@
   <link rel="payment-method" href="https://abstain-eliminate-unison.ngrok-free.dev/.well-known/x402">
   <link rel="describedby" href="README.md">
   <link rel="alternate" type="text/markdown" href="README.md">
+  <script>
+    // WebMCP: expose site tools to AI agents via navigator.modelContext (if available)
+    (function () {
+      if (!navigator.modelContext || typeof navigator.modelContext.registerTool !== 'function') {
+        return; // WebMCP API not available in this browser
+      }
+      const signal = new AbortController().signal;
+      navigator.modelContext.registerTool({
+        name: 'sentiment_analyze',
+        description: 'Analyze the sentiment polarity and confidence of a text. Paid: 0.005 USDC via x402. Returns JSON with polarity and confidence.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            text: { type: 'string', description: 'The text to analyze' }
+          },
+          required: ['text']
+        },
+        execute: async ({ text }) => {
+          const res = await fetch('https://abstain-eliminate-unison.ngrok-free.dev/v1/sentiment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text })
+          });
+          if (res.status === 402) {
+            return { error: 'Payment required (x402): 0.005 USDC', details: await res.text() };
+          }
+          return res.json();
+        },
+        signal
+      });
+      navigator.modelContext.registerTool({
+        name: 'sentiment_batch',
+        description: 'Analyze sentiment for multiple texts. Paid: 0.005 USDC per item via x402. Returns JSON array with polarity and confidence per item.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            items: { type: 'array', items: { type: 'string' }, description: 'Texts to analyze' }
+          },
+          required: ['items']
+        },
+        execute: async ({ items }) => {
+          const res = await fetch('https://abstain-eliminate-unison.ngrok-free.dev/v1/sentiment-report', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items })
+          });
+          if (res.status === 402) {
+            return { error: 'Payment required (x402): 0.005 USDC per item', details: await res.text() };
+          }
+          return res.json();
+        },
+        signal
+      });
+    })();
+  </script>
 </head>
 <body>
   <h1>Echo Sentiment API</h1>

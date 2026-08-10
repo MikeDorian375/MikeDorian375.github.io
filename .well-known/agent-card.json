@@ -7,10 +7,41 @@
   "endpoints": {
     "mcp": "https://abstain-eliminate-unison.ngrok-free.dev"
   },
+  "supportedInterfaces": [
+    {
+      "url": "https://abstain-eliminate-unison.ngrok-free.dev",
+      "transport": "streamable-http",
+      "protocol": "mcp"
+    }
+  ],
   "capabilities": [
-    "sentiment-analysis",
-    "mcp",
-    "x402-payments"
+    {
+      "id": "sentiment-analysis",
+      "name": "Sentiment Analysis",
+      "description": "Analyze the sentiment polarity and confidence of text (single or batch)."
+    },
+    {
+      "id": "mcp",
+      "name": "MCP Server",
+      "description": "Exposes analyze_sentiment and analyze_sentiment_batch as MCP tools over Streamable HTTP."
+    },
+    {
+      "id": "x402-payments",
+      "name": "x402 Payments",
+      "description": "Pay-per-call micropayments via the x402 protocol on Base and Solana (0.005 USDC per call)."
+    }
+  ],
+  "skills": [
+    {
+      "id": "sentiment-analyze",
+      "name": "Sentiment Analysis",
+      "description": "Score a single text's sentiment polarity and confidence. Costs 0.005 USDC via x402."
+    },
+    {
+      "id": "sentiment-batch",
+      "name": "Batch Sentiment Analysis",
+      "description": "Score multiple texts in one call. Costs 0.005 USDC per item via x402."
+    }
   ],
   "authentication": {
     "type": "x402",
