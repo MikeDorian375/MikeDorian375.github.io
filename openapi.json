@@ -6,8 +6,14 @@
     "version": "1.0.0"
   },
   "servers": [
-    {"url": "https://6766587364.lol/api", "description": "Main domain API (x402)"},
-    {"url": "https://abstain-eliminate-unison.ngrok-free.dev", "description": "Direct API endpoint"}
+    {
+      "url": "https://6766587364.lol/api",
+      "description": "Main domain API (x402)"
+    },
+    {
+      "url": "https://abstain-eliminate-unison.ngrok-free.dev",
+      "description": "Direct API endpoint"
+    }
   ],
   "paths": {
     "/v1/sentiment": {
@@ -20,7 +26,10 @@
           "method": "x402",
           "amount": "0.005",
           "currency": "USDC",
-          "networks": ["eip155:8453", "solana"],
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
           "description": "Per-call sentiment analysis"
         },
         "requestBody": {
@@ -30,9 +39,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "text": {"type": "string"}
+                  "text": {
+                    "type": "string"
+                  }
                 },
-                "required": ["text"]
+                "required": [
+                  "text"
+                ]
               }
             }
           }
@@ -58,7 +71,10 @@
           "amount": "0.005",
           "currency": "USDC",
           "per": "item",
-          "networks": ["eip155:8453", "solana"],
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
           "description": "Per-item batch sentiment analysis"
         },
         "requestBody": {
@@ -68,9 +84,16 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "items": {"type": "array", "items": {"type": "string"}}
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
                 },
-                "required": ["items"]
+                "required": [
+                  "items"
+                ]
               }
             }
           }
@@ -96,14 +119,109 @@
           }
         }
       }
+    },
+    "/api/ai/sentiment": {
+      "post": {
+        "summary": "Paid AI sentiment analysis (Workers AI, x402)",
+        "description": "0.005 USDC per call via x402 (Base or Solana). Send payment then retry with x402-receipt header.",
+        "operationId": "aiSentiment",
+        "x-payment-info": {
+          "intent": "charge",
+          "method": "x402",
+          "amount": 0.005,
+          "currency": "USDC",
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
+          "description": "AI sentiment analysis"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "402": {
+            "description": "Payment required (x402)"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ai/classify": {
+      "post": {
+        "summary": "Paid AI text classification (Workers AI, x402)",
+        "description": "0.005 USDC per call via x402.",
+        "operationId": "aiClassify",
+        "x-payment-info": {
+          "intent": "charge",
+          "method": "x402",
+          "amount": 0.005,
+          "currency": "USDC",
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
+          "description": "AI text classification"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "402": {
+            "description": "Payment required (x402)"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "x-service-info": {
-    "categories": ["nlp", "sentiment", "ai"],
+    "categories": [
+      "nlp",
+      "sentiment",
+      "ai"
+    ],
     "payment": {
       "protocol": "x402",
       "price_usd": 0.005,
-      "networks": ["eip155:8453", "solana"]
+      "networks": [
+        "eip155:8453",
+        "solana"
+      ]
     }
   }
 }
