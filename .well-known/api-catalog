@@ -1,0 +1,61 @@
+{
+  "name": "Echo Sentiment API",
+  "description": "Pay-per-call sentiment analysis API with x402 micropayments (dual-chain Base + Solana).",
+  "version": "1.0.0",
+  "baseUrl": "https://abstain-eliminate-unison.ngrok-free.dev",
+  "documentationUrl": "https://6766587364.lol/llms.txt",
+  "authentication": {
+    "type": "x402",
+    "description": "HTTP 402 challenge-response micropayments. No API keys. See /.well-known/x402."
+  },
+  "payment": {
+    "protocol": "x402",
+    "priceUsd": 0.005,
+    "networks": ["eip155:8453", "solana"],
+    "payToBase": "0x583FfEE3f6E0E8cAB3531fBd5C4e291784D3b6cD",
+    "payToSolana": "7bu8aB2w94N8TRysqbBdKXNoPqSr9UopaZXJGVSRbLgk"
+  },
+  "endpoints": [
+    {
+      "path": "/v1/sentiment",
+      "method": "POST",
+      "description": "Analyze sentiment of a single text. Returns polarity and confidence. 402 challenge demands 0.005 USDC.",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "text": {"type": "string"}
+        },
+        "required": ["text"]
+      },
+      "response": {
+        "type": "object",
+        "properties": {
+          "polarity": {"type": "string", "enum": ["positive", "negative", "neutral"]},
+          "confidence": {"type": "number"}
+        }
+      }
+    },
+    {
+      "path": "/v1/sentiment-report",
+      "method": "POST",
+      "description": "Analyze sentiment of multiple texts. Returns per-item results. 402 challenge demands 0.005 USDC per item.",
+      "requestBody": {
+        "type": "object",
+        "properties": {
+          "texts": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["texts"]
+      }
+    },
+    {
+      "path": "/.well-known/x402",
+      "method": "GET",
+      "description": "x402 payment protocol well-known resource. Payment method manifest."
+    },
+    {
+      "path": "/openapi.json",
+      "method": "GET",
+      "description": "OpenAPI specification of the API."
+    }
+  ]
+}

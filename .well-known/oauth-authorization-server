@@ -1,0 +1,16 @@
+{
+  "issuer": "https://6766587364.lol",
+  "authorization_endpoint": "https://6766587364.lol/.well-known/x402",
+  "token_endpoint": "https://abstain-eliminate-unison.ngrok-free.dev/.well-known/x402",
+  "response_types_supported": ["none"],
+  "grant_types_supported": ["urn:x402:payment"],
+  "token_endpoint_auth_methods_supported": ["none"],
+  "service_documentation": "https://6766587364.lol/llms.txt",
+  "payment": {
+    "protocol": "x402",
+    "description": "This server does not use OAuth 2.0 tokens. Access is granted via x402 HTTP 402 micropayments: pay 0.005 USDC per call on Base or Solana, then present the payment receipt.",
+    "well_known": "https://6766587364.lol/.well-known/x402",
+    "price_usd": 0.005,
+    "networks": ["eip155:8453", "solana"]
+  }
+}
