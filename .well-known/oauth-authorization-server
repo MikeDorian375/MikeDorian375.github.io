@@ -16,6 +16,7 @@
   "agent_auth": {
     "skill": "https://6766587364.lol/auth.md",
     "register_uri": "https://6766587364.lol/.well-known/x402",
+    "claim_uri": "https://6766587364.lol/.well-known/x402",
     "identity_types_supported": ["anonymous"],
     "anonymous": {
       "credential_types_supported": ["urn:x402:payment-receipt"],
@@ -26,6 +27,7 @@
         "type": "urn:x402:payment",
         "description": "Anonymous pay-per-call registration: the agent pays 0.005 USDC via the x402 payment manifest at /.well-known/x402 and receives a signed payment receipt (the credential). Present the receipt as the Authorization header on the follow-up request.",
         "endpoint": "https://6766587364.lol/.well-known/x402",
+        "claim_uri": "https://6766587364.lol/.well-known/x402",
         "price_usd": 0.005,
         "networks": ["eip155:8453", "solana"],
         "credential": "urn:x402:payment-receipt"
