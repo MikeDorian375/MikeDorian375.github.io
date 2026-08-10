@@ -14,32 +14,20 @@
       "protocol": "mcp"
     }
   ],
-  "capabilities": [
-    {
-      "id": "sentiment-analysis",
-      "name": "Sentiment Analysis",
-      "description": "Analyze the sentiment polarity and confidence of text (single or batch)."
-    },
-    {
-      "id": "mcp",
-      "name": "MCP Server",
-      "description": "Exposes analyze_sentiment and analyze_sentiment_batch as MCP tools over Streamable HTTP."
-    },
-    {
-      "id": "x402-payments",
-      "name": "x402 Payments",
-      "description": "Pay-per-call micropayments via the x402 protocol on Base and Solana (0.005 USDC per call)."
-    }
-  ],
-  "capabilitiesExt": {
+  "capabilities": {
     "extensions": [
       {
         "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
-        "description": "This agent accepts payments for services via the Agent Payments Protocol (AP2); it performs the merchant role with x402 settlement.",
+        "description": "This agent accepts payments for its services via the Agent Payments Protocol (AP2); it performs the merchant role with x402 settlement (0.005 USDC per call on Base or Solana).",
         "params": {
           "roles": ["merchant"]
         }
       }
+    ],
+    "services": [
+      "sentiment-analysis",
+      "mcp",
+      "x402-payments"
     ]
   },
   "skills": [
@@ -72,15 +60,6 @@
     "llmsTxt": "https://6766587364.lol/llms.txt",
     "capabilities": "https://6766587364.lol/capabilities.json",
     "apiCatalog": "https://6766587364.lol/.well-known/api-catalog"
-  },
-  "extensions": {
-    "ap2": {
-      "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
-      "description": "Merchant agent accepting AP2 payments with x402 settlement (0.005 USDC per call on Base or Solana).",
-      "params": {
-        "roles": ["merchant"]
-      }
-    }
   },
   "contact": {
     "email": "dorianmike369@gmail.com"
