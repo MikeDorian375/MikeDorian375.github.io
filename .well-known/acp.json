@@ -1,0 +1,16 @@
+{
+  "protocol": {
+    "name": "acp",
+    "version": "1.0"
+  },
+  "api_base_url": "https://6766587364.lol/api",
+  "transports": ["https"],
+  "capabilities": {
+    "services": ["sentiment-analysis"]
+  },
+  "payment": {
+    "protocol": "x402",
+    "price_usd": 0.005,
+    "networks": ["eip155:8453", "solana"]
+  }
+}

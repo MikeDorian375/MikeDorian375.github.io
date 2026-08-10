@@ -1,0 +1,16 @@
+{
+  "protocol_version": "0.1",
+  "services": [
+    {
+      "id": "echo-sentiment",
+      "name": "Echo Sentiment API",
+      "description": "Pay-per-call sentiment analysis via x402 micropayments (Base + Solana).",
+      "endpoints": ["https://6766587364.lol/api/v1/sentiment"]
+    }
+  ],
+  "capabilities": ["pay-per-call", "x402", "usdc"],
+  "endpoints": {
+    "api_base": "https://6766587364.lol/api",
+    "payment_manifest": "https://6766587364.lol/.well-known/x402"
+  }
+}

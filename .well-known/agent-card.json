@@ -62,6 +62,19 @@
     "capabilities": "https://6766587364.lol/capabilities.json",
     "apiCatalog": "https://6766587364.lol/.well-known/api-catalog"
   },
+  "extensions": {
+    "ap2": {
+      "version": "1.0",
+      "api_base_url": "https://6766587364.lol/api",
+      "transports": ["https"],
+      "payment": {
+        "protocol": "x402",
+        "price_usd": 0.005,
+        "networks": ["eip155:8453", "solana"]
+      },
+      "services": ["sentiment-analysis", "mcp", "x402-payments"]
+    }
+  },
   "contact": {
     "email": "dorianmike369@gmail.com"
   }
