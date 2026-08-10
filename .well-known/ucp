@@ -1,16 +1,41 @@
 {
-  "protocol_version": "0.1",
-  "services": [
-    {
-      "id": "echo-sentiment",
-      "name": "Echo Sentiment API",
-      "description": "Pay-per-call sentiment analysis via x402 micropayments (Base + Solana).",
-      "endpoints": ["https://6766587364.lol/api/v1/sentiment"]
+  "ucp": {
+    "version": "2026-04-08",
+    "services": {
+      "dev.ucp.payments": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/overview",
+          "transport": "rest",
+          "endpoint": "https://6766587364.lol/api/v1",
+          "schema": "https://6766587364.lol/openapi.json"
+        },
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/overview",
+          "transport": "a2a",
+          "endpoint": "https://6766587364.lol/.well-known/agent-card.json"
+        }
+      ]
+    },
+    "capabilities": {
+      "dev.ucp.payments.pay_per_call": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/overview",
+          "schema": "https://6766587364.lol/openapi.json"
+        }
+      ],
+      "dev.ucp.common.identity_linking": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/overview",
+          "schema": "https://6766587364.lol/.well-known/oauth-protected-resource"
+        }
+      ]
+    },
+    "supported_versions": {
+      "2026-04-08": "https://6766587364.lol/.well-known/ucp"
     }
-  ],
-  "capabilities": ["pay-per-call", "x402", "usdc"],
-  "endpoints": {
-    "api_base": "https://6766587364.lol/api",
-    "payment_manifest": "https://6766587364.lol/.well-known/x402"
   }
 }
