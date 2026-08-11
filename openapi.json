@@ -207,6 +207,97 @@
           }
         }
       }
+    },
+    "/api/ai/image": {
+      "post": {
+        "summary": "Paid AI image generation (Flux on Workers AI, x402)",
+        "description": "0.01 USDC per image via x402 (Base or Solana). Returns JPEG/PNG bytes.",
+        "operationId": "aiImage",
+        "x-payment-info": {
+          "intent": "charge",
+          "method": "x402",
+          "amount": 0.01,
+          "currency": "USDC",
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
+          "description": "AI image generation"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prompt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "prompt"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "402": {
+            "description": "Payment required (x402)"
+          },
+          "200": {
+            "description": "Image bytes"
+          }
+        }
+      }
+    },
+    "/api/shop/catalog": {
+      "get": {
+        "summary": "List paid digital downloads",
+        "operationId": "shopCatalog",
+        "responses": {
+          "200": {
+            "description": "Catalog of items with prices"
+          }
+        }
+      }
+    },
+    "/api/shop/download/{item}": {
+      "post": {
+        "summary": "Paid digital download (x402)",
+        "description": "Pay the item price then retry with x402-receipt header to receive the file.",
+        "operationId": "shopDownload",
+        "x-payment-info": {
+          "intent": "charge",
+          "method": "x402",
+          "amount": 0.01,
+          "currency": "USDC",
+          "networks": [
+            "eip155:8453",
+            "solana"
+          ],
+          "description": "Paid digital download"
+        },
+        "parameters": [
+          {
+            "name": "item",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "402": {
+            "description": "Payment required (x402)"
+          },
+          "200": {
+            "description": "File bytes"
+          }
+        }
+      }
     }
   },
   "x-service-info": {
