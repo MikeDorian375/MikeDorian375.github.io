@@ -12,7 +12,7 @@ Agent-ready landing site for the Echo Sentiment API — a pay-per-call sentiment
 
 ## Links
 
-- Live API: https://abstain-eliminate-unison.ngrok-free.dev/
+- Live API: https://api.6766587364.lol/
 - MCP server repo: https://github.com/MikeDorian375/echo-sentiment-mcp
 - Seller starter kit: https://github.com/MikeDorian375/x402-paywall-starter
 - x402 standard: https://x402.org

@@ -4,7 +4,7 @@
     {
       "name": "sentiment-analysis",
       "description": "Pay-per-call sentiment analysis via MCP server. Analyze polarity and confidence of arbitrary text. Cost: 0.005 USDC per call (x402 micropayments, Base or Solana).",
-      "endpoint": "https://abstain-eliminate-unison.ngrok-free.dev",
+      "endpoint": "https://api.6766587364.lol",
       "protocol": "mcp",
       "tools": [
         {

@@ -4,7 +4,7 @@
       "anchor": "https://6766587364.lol/.well-known/api-catalog",
       "service-desc": [
         {
-          "href": "https://abstain-eliminate-unison.ngrok-free.dev/openapi.json",
+          "href": "https://api.6766587364.lol/openapi.json",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
@@ -16,16 +16,16 @@
       ],
       "status": [
         {
-          "href": "https://abstain-eliminate-unison.ngrok-free.dev/v1/sample",
+          "href": "https://api.6766587364.lol/v1/sample",
           "type": "application/json"
         }
       ]
     },
     {
-      "anchor": "https://abstain-eliminate-unison.ngrok-free.dev",
+      "anchor": "https://api.6766587364.lol",
       "service-desc": [
         {
-          "href": "https://abstain-eliminate-unison.ngrok-free.dev/openapi.json",
+          "href": "https://api.6766587364.lol/openapi.json",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
@@ -40,7 +40,7 @@
   "name": "Echo Sentiment API",
   "description": "Pay-per-call sentiment analysis API with x402 micropayments (dual-chain Base + Solana).",
   "version": "1.0.0",
-  "baseUrl": "https://abstain-eliminate-unison.ngrok-free.dev",
+  "baseUrl": "https://api.6766587364.lol",
   "authentication": {
     "type": "x402",
     "description": "HTTP 402 challenge-response micropayments. No API keys. See /.well-known/x402."

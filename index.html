@@ -7,8 +7,8 @@
   <meta name="description" content="Pay-per-call sentiment analysis API and MCP server using the x402 payment standard. Dual-chain Base + Solana, USDC, no API keys.">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="ai-manifest" href="llms.txt">
-  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://abstain-eliminate-unison.ngrok-free.dev/openapi.json">
-  <link rel="payment-method" href="https://abstain-eliminate-unison.ngrok-free.dev/.well-known/x402">
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://api.6766587364.lol/openapi.json">
+  <link rel="payment-method" href="https://api.6766587364.lol/.well-known/x402">
   <link rel="describedby" href="README.md">
   <link rel="alternate" type="text/markdown" href="README.md">
   <script>
@@ -29,7 +29,7 @@
           required: ['text']
         },
         execute: async ({ text }) => {
-          const res = await fetch('https://abstain-eliminate-unison.ngrok-free.dev/v1/sentiment', {
+          const res = await fetch('https://api.6766587364.lol/v1/sentiment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
@@ -52,7 +52,7 @@
           required: ['items']
         },
         execute: async ({ items }) => {
-          const res = await fetch('https://abstain-eliminate-unison.ngrok-free.dev/v1/sentiment-report', {
+          const res = await fetch('https://api.6766587364.lol/v1/sentiment-report', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ items })
@@ -72,9 +72,9 @@
   <p>Pay-per-call sentiment analysis and market intelligence, built on <a href="https://x402.org">x402</a>. Dual-chain: Base + Solana. USDC. No API keys, no subscriptions — the payment is the authentication.</p>
   <h2>Try it live</h2>
   <ul>
-    <li>Free tier: <code>GET https://abstain-eliminate-unison.ngrok-free.dev/v1/sample</code></li>
+    <li>Free tier: <code>GET https://api.6766587364.lol/v1/sample</code></li>
     <li>Paid endpoints return <code>HTTP 402</code> with an x402 payment-required header</li>
-    <li>OpenAPI: <a href="https://abstain-eliminate-unison.ngrok-free.dev/openapi.json">/openapi.json</a></li>
+    <li>OpenAPI: <a href="https://api.6766587364.lol/openapi.json">/openapi.json</a></li>
   </ul>
   <h2>Agent resources</h2>
   <ul>

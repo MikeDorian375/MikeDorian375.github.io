@@ -5,9 +5,9 @@ Dual-chain: Base + Solana. USDC. No API keys, no subscriptions — the payment i
 
 ## Try it live
 
-- Free tier: `GET https://abstain-eliminate-unison.ngrok-free.dev/v1/sample`
+- Free tier: `GET https://api.6766587364.lol/v1/sample`
 - Paid endpoints return `HTTP 402` with an x402 payment-required header
-- OpenAPI: `https://abstain-eliminate-unison.ngrok-free.dev/openapi.json`
+- OpenAPI: `https://api.6766587364.lol/openapi.json`
 
 ## Pricing
 
@@ -27,7 +27,7 @@ Dual-chain: Base + Solana. USDC. No API keys, no subscriptions — the payment i
 
 The same sentiment engine is exposed as an MCP server over Streamable HTTP:
 
-- Endpoint: `https://abstain-eliminate-unison.ngrok-free.dev`
+- Endpoint: `https://api.6766587364.lol`
 - Tools: `analyze_sentiment`, `analyze_sentiment_batch`
 - Cost: 0.005 USDC per tool call via x402
 

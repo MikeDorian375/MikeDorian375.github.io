@@ -1,7 +1,7 @@
 {
   "issuer": "https://6766587364.lol",
   "authorization_endpoint": "https://6766587364.lol/.well-known/x402",
-  "token_endpoint": "https://abstain-eliminate-unison.ngrok-free.dev/.well-known/x402",
+  "token_endpoint": "https://api.6766587364.lol/.well-known/x402",
   "response_types_supported": ["none"],
   "grant_types_supported": ["urn:x402:payment"],
   "token_endpoint_auth_methods_supported": ["none"],

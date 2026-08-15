@@ -39,7 +39,7 @@ No account registration is required. Access is provisioned per-request via the x
 
 The same sentiment engine is exposed as an MCP server:
 
-- **Endpoint:** `https://abstain-eliminate-unison.ngrok-free.dev` (MCP over Streamable HTTP)
+- **Endpoint:** `https://api.6766587364.lol` (MCP over Streamable HTTP)
 - **Tools:** `analyze_sentiment`, `analyze_sentiment_batch`
 - **Cost:** 0.005 USDC per tool call, paid via x402
 

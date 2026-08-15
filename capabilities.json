@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "protocol": "mcp",
   "endpoints": {
-    "mcp": "https://abstain-eliminate-unison.ngrok-free.dev"
+    "mcp": "https://api.6766587364.lol"
   },
   "capabilities": [
     "sentiment-analysis",
